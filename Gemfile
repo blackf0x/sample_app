@@ -5,17 +5,17 @@ gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 group :development, :test do 
 	# Use sqlite3 as the database for Active Record
 	gem 'sqlite3'
-	gem 'rspec-rails', '2.13.1'
+	gem 'rspec-rails', '~> 3.5.2'
 	# Call 'byebug' anywhere in the code to stop execution and get a debugger console
     gem 'byebug', platform: :mri
 end
 
 group :test do
   gem 'selenium-webdriver', '2.35.1'
-  gem 'capybara', '2.1.0'
+  gem 'capybara'
 end
 
-
+gem 'test-unit'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
