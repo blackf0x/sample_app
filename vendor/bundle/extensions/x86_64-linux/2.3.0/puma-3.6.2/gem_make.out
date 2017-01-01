@@ -1,0 +1,33 @@
+current directory: /home/vladimir/rails_projects/sample_app/vendor/bundle/gems/puma-3.6.2/ext/puma_http11
+/usr/bin/ruby -r ./siteconf20170101-4526-5nw4w7.rb extconf.rb
+checking for BIO_read() in -lcrypto... no
+checking for BIO_read() in -llibeay32... no
+creating Makefile
+
+To see why this extension failed to compile, please check the mkmf.log which can be found here:
+
+  /home/vladimir/rails_projects/sample_app/vendor/bundle/extensions/x86_64-linux/2.3.0/puma-3.6.2/mkmf.log
+
+current directory: /home/vladimir/rails_projects/sample_app/vendor/bundle/gems/puma-3.6.2/ext/puma_http11
+make "DESTDIR=" clean
+rm -f 
+rm -f puma_http11.so  *.o  *.bak mkmf.log .*.time
+
+current directory: /home/vladimir/rails_projects/sample_app/vendor/bundle/gems/puma-3.6.2/ext/puma_http11
+make "DESTDIR="
+gcc -I. -I/usr/include -I/usr/include/ruby/backward -I/usr/include -I.   -fPIC -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong --param=ssp-buffer-size=4 -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -mtune=generic -fPIC -m64 -o mini_ssl.o -c mini_ssl.c
+mini_ssl.c: In function ‘Init_mini_ssl’:
+mini_ssl.c:439:14: warning: unused variable ‘eng’ [-Wunused-variable]
+   VALUE mod, eng;
+              ^~~
+gcc -I. -I/usr/include -I/usr/include/ruby/backward -I/usr/include -I.   -fPIC -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong --param=ssp-buffer-size=4 -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -mtune=generic -fPIC -m64 -o io_buffer.o -c io_buffer.c
+gcc -I. -I/usr/include -I/usr/include/ruby/backward -I/usr/include -I.   -fPIC -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong --param=ssp-buffer-size=4 -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -mtune=generic -fPIC -m64 -o puma_http11.o -c puma_http11.c
+gcc -I. -I/usr/include -I/usr/include/ruby/backward -I/usr/include -I.   -fPIC -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong --param=ssp-buffer-size=4 -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -mtune=generic -fPIC -m64 -o http11_parser.o -c http11_parser.c
+rm -f puma_http11.so
+gcc -shared -o puma_http11.so mini_ssl.o io_buffer.o puma_http11.o http11_parser.o -L. -L/usr/lib64 -L. -Wl,-z,relro -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -fstack-protector -rdynamic -Wl,-export-dynamic  -m64  -lruby  -lpthread -ldl -lcrypt -lm   -lc
+
+current directory: /home/vladimir/rails_projects/sample_app/vendor/bundle/gems/puma-3.6.2/ext/puma_http11
+make "DESTDIR=" install
+/usr/bin/mkdir -p . ./.gem.20170101-4526-1omg0jc/puma
+exit > .RUBYARCHDIR.-.puma.time
+/usr/bin/install -c -m 0755 puma_http11.so ./.gem.20170101-4526-1omg0jc/puma

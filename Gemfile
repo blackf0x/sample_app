@@ -6,7 +6,7 @@ gem 'bcrypt-ruby', '3.1.2'
 
 group :development, :test do 
 	# Use sqlite3 as the database for Active Record
-	gem 'sqlite3'
+	#gem 'sqlite3'
 	gem 'rspec-rails', '~> 3.5.2'
 	# Call 'byebug' anywhere in the code to stop execution and get a debugger console
     gem 'byebug', platform: :mri
@@ -40,18 +40,13 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
-
+#gem 'pg', '0.15.1'
 group :doc do
   gem 'sdoc', '0.3.20', require: false
 end
 
 group :production do
-  gem 'pg', '0.15.1'
-  gem 'rails_12factor', '0.0.2'
-end
-
-group :production do
+  #gem 'pg'
   gem 'pg', '0.15.1'
   gem 'rails_12factor', '0.0.2'
 end

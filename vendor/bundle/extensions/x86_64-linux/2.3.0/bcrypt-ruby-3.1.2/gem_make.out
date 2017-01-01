@@ -1,0 +1,29 @@
+current directory: /home/vladimir/rails_projects/sample_app/vendor/bundle/gems/bcrypt-ruby-3.1.2/ext/mri
+/usr/bin/ruby -r ./siteconf20170101-4526-1k9tdtk.rb extconf.rb
+checking for ruby/util.h... yes
+creating Makefile
+
+To see why this extension failed to compile, please check the mkmf.log which can be found here:
+
+  /home/vladimir/rails_projects/sample_app/vendor/bundle/extensions/x86_64-linux/2.3.0/bcrypt-ruby-3.1.2/mkmf.log
+
+current directory: /home/vladimir/rails_projects/sample_app/vendor/bundle/gems/bcrypt-ruby-3.1.2/ext/mri
+make "DESTDIR=" clean
+rm -f 
+rm -f bcrypt_ext.so  *.o  *.bak mkmf.log .*.time
+
+current directory: /home/vladimir/rails_projects/sample_app/vendor/bundle/gems/bcrypt-ruby-3.1.2/ext/mri
+make "DESTDIR="
+gcc -I. -I/usr/include -I/usr/include/ruby/backward -I/usr/include -I. -DHAVE_RUBY_UTIL_H    -fPIC -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong --param=ssp-buffer-size=4 -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -mtune=generic -fPIC -m64 -o crypt.o -c crypt.c
+gcc -I. -I/usr/include -I/usr/include/ruby/backward -I/usr/include -I. -DHAVE_RUBY_UTIL_H    -fPIC -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong --param=ssp-buffer-size=4 -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -mtune=generic -fPIC -m64 -o wrapper.o -c wrapper.c
+gcc -I. -I/usr/include -I/usr/include/ruby/backward -I/usr/include -I. -DHAVE_RUBY_UTIL_H    -fPIC -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong --param=ssp-buffer-size=4 -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -mtune=generic -fPIC -m64 -o crypt_blowfish.o -c crypt_blowfish.c
+gcc -I. -I/usr/include -I/usr/include/ruby/backward -I/usr/include -I. -DHAVE_RUBY_UTIL_H    -fPIC -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong --param=ssp-buffer-size=4 -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -mtune=generic -fPIC -m64 -o crypt_gensalt.o -c crypt_gensalt.c
+gcc -I. -I/usr/include -I/usr/include/ruby/backward -I/usr/include -I. -DHAVE_RUBY_UTIL_H    -fPIC -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong --param=ssp-buffer-size=4 -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -mtune=generic -fPIC -m64 -o bcrypt_ext.o -c bcrypt_ext.c
+rm -f bcrypt_ext.so
+gcc -shared -o bcrypt_ext.so crypt.o wrapper.o crypt_blowfish.o crypt_gensalt.o bcrypt_ext.o -L. -L/usr/lib64 -L. -Wl,-z,relro -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -fstack-protector -rdynamic -Wl,-export-dynamic  -m64  -lruby  -lpthread -ldl -lcrypt -lm   -lc
+
+current directory: /home/vladimir/rails_projects/sample_app/vendor/bundle/gems/bcrypt-ruby-3.1.2/ext/mri
+make "DESTDIR=" install
+/usr/bin/mkdir -p . ./.gem.20170101-4526-d2bgkh
+exit > .RUBYARCHDIR.time
+/usr/bin/install -c -m 0755 bcrypt_ext.so ./.gem.20170101-4526-d2bgkh
